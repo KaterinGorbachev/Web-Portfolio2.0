@@ -27,6 +27,7 @@
           transition
           hover:bg-[#a2dffd] hover:text-black
           cursor-pointer
+          w-full
         "
       >
         Log in
