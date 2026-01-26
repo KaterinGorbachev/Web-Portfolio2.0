@@ -3,6 +3,8 @@ env/
 .venv
 venv/
 
+styles.txt
+
 
 # Logs
 logs
