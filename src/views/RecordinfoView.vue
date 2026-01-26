@@ -1,26 +1,26 @@
 <template>
-  <section class="w-full p-0.5 flex flex-col gap-[1rem]">
+  <section class="w-full p-0.5 flex flex-col gap-[1rem] items-center">
     <h2
       class="text-2xl font-[Roboto_Slab] uppercase tracking-wide w-full text-start lg:text-center"
     >
       Managment board
     </h2>
-    <form @submit.prevent="addInfo" class="w-full p-[2rem] flex flex-col gap-4">
+    <form @submit.prevent="addInfo" class="p-[2rem] flex flex-col gap-4 w-[80vw]">
 
-        <div class="flex items-start w-full gap-4">
-          <div class="flex flex-col gap-0.5 w-[60%]">
+        <div class="flex items-start w-full justify-between">
+          <div class="flex flex-col gap-0.5 w-[75%]">
             <label for="title" class="font-[EB_Garamond] text-[1.2rem] w-full text-start">Title*:</label>
             <input
               type="text"
               name="title"
-              placeholder="Enter a title"
+              placeholder="Enter title"
               v-model="title"
               required
               class="w-full border border-black bg-white px-4 py-3 text-sm text-black placeholder:text-black/40 focus:outline-none focus:border-[#a2dffd]"
             />
             <small>0/200 characters</small>
           </div>
-          <div class="flex flex-col gap-0.5">
+          <div class="flex flex-col gap-0.5 w-[20%]">
             <label for="date" class="font-[EB_Garamond] text-[1.2rem] w-full text-start">Date*:</label>
             <input
               type="date"
@@ -57,7 +57,7 @@
           <input
             type="url"
             name="image"
-            placeholder="Enter the link with image"
+            placeholder="Enter link with image"
             v-model="image"
             class="w-full border border-black bg-white px-4 py-3 text-sm text-black placeholder:text-black/40 focus:outline-none focus:border-[#a2dffd]"
           />
