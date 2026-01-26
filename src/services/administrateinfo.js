@@ -27,36 +27,32 @@ export const saveData = async (data, table) => {
   }
 }
 
-
-
 export const getInfo = async (table) => {
   try {
     if (!table) {
-      throw new Error("Table name is required");
+      throw new Error('Table name is required')
     }
 
-    const querySnapshot = await getDocs(collection(db, table));
+    const querySnapshot = await getDocs(collection(db, table))
 
-    const data = querySnapshot.docs.map(doc => ({
+    const data = querySnapshot.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
-    }));
+    }))
 
     return {
       ok: true,
       data,
-    };
-
+    }
   } catch (error) {
-    console.error("Firebase getInfo error:", error);
+    console.error('Firebase getInfo error:', error)
 
     return {
       ok: false,
       error: {
-        message: error.message || "Failed to fetch data",
-        code: error.code || "unknown",
+        message: error.message || 'Failed to fetch data',
+        code: error.code || 'unknown',
       },
-    };
+    }
   }
-};
-
+}

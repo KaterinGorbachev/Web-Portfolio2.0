@@ -1,9 +1,8 @@
 <template>
   <HeaderMenu />
-  <main class="pt-[10vh]">
+  <main>
     <RouterView />
   </main>
-
 </template>
 
 <script setup>

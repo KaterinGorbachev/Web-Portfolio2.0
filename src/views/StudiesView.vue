@@ -3,15 +3,13 @@
 </template>
 
 <script setup>
-import { getInfo } from '@/services/administrateinfo';
-import { onMounted } from 'vue';
+import { getInfo } from '@/services/administrateinfo'
+import { onMounted } from 'vue'
 
-onMounted( async() => {
+onMounted(async () => {
   const data = await getInfo('studies')
-  console.log(data.data);
-
+  console.log(data.data)
 })
-
 </script>
 
 <style></style>

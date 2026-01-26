@@ -1,5 +1,5 @@
 <template>
-  <section class="h-[80vh] flex justify-center items-center">
+  <section class="h-[80vh] flex justify-center items-center pt-[80px]">
     <div class="shadow-md w-[60%] gap-[1.75em] p-8 rounded flex flex-col items-center">
       <div class="flex flex-col gap-0.5 items-start lg:items-center">
         <h2
@@ -18,17 +18,7 @@
       />
       <button
         @click="getAccess()"
-        class="
-          inline-flex items-center justify-center
-          bg-black
-          px-6 py-3
-          text-sm uppercase tracking-wide
-          text-white
-          transition
-          hover:bg-[#a2dffd] hover:text-black
-          cursor-pointer
-          w-full
-        "
+        class="inline-flex items-center justify-center bg-black px-6 py-3 text-sm uppercase tracking-wide text-white transition hover:bg-[#a2dffd] hover:text-black cursor-pointer w-full"
       >
         Log in
       </button>
