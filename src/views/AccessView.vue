@@ -1,6 +1,6 @@
 <template>
   <section class="h-[80vh] flex justify-center items-center pt-[80px]">
-    <div class="shadow-md w-[60%] gap-[1.75em] p-8 rounded flex flex-col items-center">
+    <div class="shadow-md w-[90%] lg:w-[60%] gap-[1.75em] p-8 rounded flex flex-col items-center">
       <div class="flex flex-col gap-0.5 items-start lg:items-center">
         <h2
           class="text-2xl font-[Roboto_Slab] uppercase tracking-wide w-full text-start lg:text-center"
