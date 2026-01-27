@@ -1,6 +1,8 @@
 <template>
   <section class="w-full p-2 flex flex-col gap-4 items-center pt-[80px]">
-    <h2 class="text-2xl font-[Roboto_Slab] uppercase tracking-wide w-full px-8 text-start lg:text-center">
+    <h2
+      class="text-2xl font-[Roboto_Slab] uppercase tracking-wide w-full px-8 text-start lg:text-center"
+    >
       Managment board
     </h2>
     <p class="font-[EB_Garamond] text-[1.2rem] px-8 w-full text-start lg:text-center">
@@ -147,7 +149,7 @@
             >
 
             <input
-              v-for="(_,index) in moreImages"
+              v-for="(_, index) in moreImages"
               :key="index"
               type="url"
               name="image"
@@ -182,7 +184,7 @@
             >
 
             <input
-              v-for="(_,index) in moreVideos"
+              v-for="(_, index) in moreVideos"
               :key="index"
               type="text"
               name="video"
@@ -246,30 +248,27 @@ const addInfo = async () => {
   }
 
   let data = {}
-  if(table.value == 'about'){
-     data = {
+  if (table.value == 'about') {
+    data = {
       title: title.value,
       description: about.value,
       image: images.value[0],
       tools: tools.value,
-      contacts: contacts.value
+      contacts: contacts.value,
     }
-
   } else {
-      data = {
-        title: title.value,
-        description: description.value,
-        date: date.value,
-        image: images?.value,
-        video: videos?.value
-      }
+    data = {
+      title: title.value,
+      description: description.value,
+      date: date.value,
+      image: images?.value,
+      video: videos?.value,
+    }
   }
 
   const cleanData = JSON.parse(JSON.stringify(data))
   await saveData(cleanData, table.value)
-
 }
-
 
 watch(moreImages, (n) => {
   images.value.length = n

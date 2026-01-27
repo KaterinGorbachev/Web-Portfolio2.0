@@ -32,7 +32,7 @@
           class="block py-3 lg:py-0 text-[14px] lg:text-xl transition-all delay-100 hover:font-bold font-[Roboto_Slab] uppercase tracking-wide"
           @click="isOpen = false"
         >
-          About me
+          About
         </router-link>
         <router-link
           to="/studies"
