@@ -14,6 +14,14 @@ const router = createRouter({
       meta: { requiresAdmin: true },
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    // back/forward button
+    if (savedPosition) {
+      return savedPosition
+    }
+    // always scroll to top
+    return { top: 0 }
+  }
 })
 
 router.beforeEach((to, from, next) => {
