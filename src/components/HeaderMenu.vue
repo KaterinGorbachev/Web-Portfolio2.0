@@ -1,6 +1,6 @@
 <template>
   <header
-    class="pt-4 border-gray-200 py-6 lg:p-7 flex justify-center items-center bg-white/75 backdrop-blur-sm fixed inset-x-0 top-0 z-50 text-[#efefef] hover:bg-white hover:text-black duration-300 ease-in-out"
+    class="pt-4 border-gray-200 py-6 lg:p-7 flex justify-center items-center bg-white/75 backdrop-blur-sm fixed inset-x-0 top-0 z-50 lg:text-[#efefef] text-black hover:bg-white hover:text-black duration-300 ease-in-out"
   >
     <nav class="w-[80%] flex justify-start gap-2 items-center lg:justify-end">
       <!-- Hamburger Button (Mobile) -->
