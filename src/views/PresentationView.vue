@@ -2,7 +2,7 @@
   <section class="relative h-screen">
     <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
       <source
-        src="/src/videos/CopyrightmarinaborisovaallrightsreservedsaintpetersburgforaboutXS.mp4"
+        src="/videos/CopyrightmarinaborisovaallrightsreservedsaintpetersburgforaboutXS.mp4"
         type="video/mp4"
       />
     </video>
@@ -47,7 +47,7 @@
         </div>
       </div>
       <div class="lg:w-[40%] w-full">
-        <img src="/src/images/MarinaBorisova.jpg" alt="Marina Borisova" />
+        <img src="/images/MarinaBorisova.jpg" alt="Marina Borisova" />
       </div>
     </div>
   </section>
@@ -79,37 +79,37 @@
                 class="shrink-0 w-[320px] h-[200px]"
               >
                 <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                  <source src="/src/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgabstract1XS.MP4" type="video/mp4" />
+                  <source src="/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgabstract1XS.MP4" type="video/mp4" />
                 </video>
               </div>
               <div
                 class="shrink-0 w-[320px] h-[200px]"
               >
-                <img src="/src/images/CopyrightAllRightsReservedMarinaBorisovaabstract1.jpg" class="w-full h-full object-cover" />
+                <img src="/images/CopyrightAllRightsReservedMarinaBorisovaabstract1.jpg" class="w-full h-full object-cover" />
               </div>
               <div
                 class="shrink-0 w-[320px] h-[200px]"
               >
                 <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                  <source src="/src/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgabstract2.MP4" type="video/mp4" />
+                  <source src="/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgabstract2.MP4" type="video/mp4" />
                 </video>
               </div>
               <div
                 class="shrink-0 w-[320px] h-[200px]"
               >
-                <img src="/src/images/CopyrightAllRightsReservedMarinaBorisovaabstract3.jpg" class="w-full h-full object-cover" />
+                <img src="/images/CopyrightAllRightsReservedMarinaBorisovaabstract3.jpg" class="w-full h-full object-cover" />
               </div>
               <div
                 class="shrink-0 w-[320px] h-[200px]"
               >
                 <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                  <source src="/src/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgabstract3XS.MP4" type="video/mp4" />
+                  <source src="/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgabstract3XS.MP4" type="video/mp4" />
                 </video>
               </div>
                <div
                 class="shrink-0 w-[320px] h-[200px]"
               >
-                <img src="/src/images/CopyrightAllRightsReservedMarinaBorisovaabstract4.jpg" class="w-full h-full object-cover" />
+                <img src="/images/CopyrightAllRightsReservedMarinaBorisovaabstract4.jpg" class="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -126,14 +126,14 @@
                 class="shrink-0 w-[320px] h-[200px]"
               >
                 <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                  <source src="/src/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgfor2025silentdanceXS.MP4" type="video/mp4" />
+                  <source src="/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgfor2025silentdanceXS.MP4" type="video/mp4" />
                 </video>
               </div>
               <div
                 class="shrink-0 w-[320px] h-[200px]"
               >
                 <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                  <source src="/src/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgfor2025dncingmanXS.MP4" type="video/mp4" />
+                  <source src="/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgfor2025dncingmanXS.MP4" type="video/mp4" />
                 </video>
               </div>
 
@@ -151,25 +151,25 @@
               <div
                 class="shrink-0 w-[320px] h-[200px]"
               >
-                <img src="/src/images/CopyrightAllRightsReservedMarinaBorisovaabstractman.jpg" class="w-full h-full object-cover" />
+                <img src="/images/CopyrightAllRightsReservedMarinaBorisovaabstractman.jpg" class="w-full h-full object-cover" />
 
               </div>
               <div
                 class="shrink-0 w-[320px] h-[200px]"
               >
-                <img src="/src/images/CopyrightAllRightsReservedMarinaBorisovaabstracthelloween.jpg" class="w-full h-full object-cover" />
+                <img src="/images/CopyrightAllRightsReservedMarinaBorisovaabstracthelloween.jpg" class="w-full h-full object-cover" />
 
               </div>
               <div
                 class="shrink-0 w-[320px] h-[200px]"
               >
-                <img src="/src/images/CopyrightAllRightsReservedMarinaBorisovaabstractmonte.jpg" class="w-full h-full object-cover" />
+                <img src="/images/CopyrightAllRightsReservedMarinaBorisovaabstractmonte.jpg" class="w-full h-full object-cover" />
 
               </div>
               <div
                 class="shrink-0 w-[320px] h-[200px]"
               >
-                <img src="/src/images/CopyrightAllRightsReservedMarinaBorisovaabstracttiger.jpg" class="w-full h-full object-cover" />
+                <img src="/images/CopyrightAllRightsReservedMarinaBorisovaabstracttiger.jpg" class="w-full h-full object-cover" />
 
               </div>
 
