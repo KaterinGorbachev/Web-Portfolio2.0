@@ -79,7 +79,7 @@
                 class="shrink-0 w-[320px] h-[200px]"
               >
                 <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                  <source src="/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgabstract1XS.mp4" type="video/mp4" />
+                  <source src="videos/Copyrightmarinaborisovaallrightsreservedsaintpetersburgabstract1XS.mp4" type="video/mp4" />
                 </video>
               </div>
               <div
