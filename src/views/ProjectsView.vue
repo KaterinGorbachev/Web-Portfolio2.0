@@ -4,20 +4,21 @@
     <hr>
     <!--v-for="project, index in projects" :key="index"-->
     <div v-for="project, index in projects" :key="index">
-       <ProjectCard
-        v-for="project, index in projects" :key="index"
+      <hr>
+      <ProjectCard
         :title="project?.title"
         :description="project?.description"
         :video="project?.video"
         :date="project?.date"
         :image="project?.image"
-      />
+        />
+      <hr>
       <!-- <div v-for="link, index in project.video" :key="index" >
         <iframe  width="560" height="315" :src="link" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
       </div> -->
 
-      <hr>
+
     </div>
 
 

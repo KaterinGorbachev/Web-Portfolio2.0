@@ -12,7 +12,7 @@
       />
 
       <!-- Video -->
-      <div v-for="(link, index) in video" :key="index">
+      <div v-for="(link, index) in video" :key="index" class="flex p-[2rem]">
         <video
           v-if="link.endsWith('.mp4')"
           autoplay muted loop playsinline
