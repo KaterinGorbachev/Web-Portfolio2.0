@@ -1,5 +1,5 @@
 import { db } from '@/database/databaseconfig'
-import { doc, collection, addDoc, getDocs, updateDoc } from 'firebase/firestore'
+import { doc, collection, addDoc, getDocs, updateDoc, serverTimestamp } from 'firebase/firestore'
 
 import { mapFirebaseError } from '@/services/firebaseErrors'
 
@@ -14,7 +14,7 @@ export const saveData = async (data, table) => {
 
     return {
       ok: true,
-      mensaje: 'Information was added successfully',
+      message: 'Information was added successfully',
     }
   } catch (error) {
     console.error('Error while saving information:', error.code)
@@ -22,7 +22,7 @@ export const saveData = async (data, table) => {
     return {
       ok: false,
       code: error.code,
-      mensaje: mapFirebaseError(error),
+      message: mapFirebaseError(error),
     }
   }
 }
@@ -51,6 +51,27 @@ export const getInfo = async (table) => {
       ok: false,
       error: {
         message: error.message || 'Failed to fetch data',
+        code: error.code || 'unknown',
+      },
+    }
+  }
+}
+
+export const updateAbout = async (data) => {
+  try {
+    await updateDoc(doc(db, 'about', 'bbHKeTpSOJHwu52lTazO'), data)
+    return {
+      ok: true,
+      message: 'Information was added successfully',
+    }
+
+  } catch (error) {
+    console.error('Firebase getInfo error:', error)
+
+    return {
+      ok: false,
+      error: {
+        message: error.message || 'Failed to update data',
         code: error.code || 'unknown',
       },
     }

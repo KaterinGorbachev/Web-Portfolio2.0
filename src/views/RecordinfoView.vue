@@ -25,39 +25,35 @@
       <div v-if="table == 'about'">
         <div class="flex flex-col gap-0.5 w-full">
           <label for="title" class="font-[EB_Garamond] text-[1.2rem] w-full text-start"
-            >Name*:</label
+            >Name:</label
           >
           <input
             type="text"
             name="title"
             placeholder="Enter name"
             v-model="title"
-            required
             class="w-full border border-black bg-white px-4 py-3 text-sm text-black placeholder:text-black/40 focus:outline-none focus:border-[#a2dffd]"
           />
           <small>0/200 characters</small>
         </div>
         <div class="flex flex-col gap-0.5">
           <label for="description" class="font-[EB_Garamond] text-[1.2rem] w-full text-start"
-            >Your story in 3 paragraphs*:</label
+            >Your story in 3 paragraphs:</label
           >
           <textarea
             name="description"
-            required
             placeholder="Your passion"
             v-model="about[0]"
             class="w-full h-[30vh] border border-black bg-white px-4 py-3 text-sm text-black placeholder:text-black/40 resize-none focus:outline-none focus:border-[#a2dffd]"
           ></textarea>
           <textarea
             name="description"
-            required
             placeholder="Your job"
             v-model="about[1]"
             class="w-full h-[30vh] border border-black bg-white px-4 py-3 text-sm text-black placeholder:text-black/40 resize-none focus:outline-none focus:border-[#a2dffd]"
           ></textarea>
           <textarea
             name="description"
-            required
             placeholder="Your objectives"
             v-model="about[2]"
             class="w-full h-[30vh] border border-black bg-white px-4 py-3 text-sm text-black placeholder:text-black/40 resize-none focus:outline-none focus:border-[#a2dffd]"
@@ -130,18 +126,7 @@
             />
           </div>
         </div>
-        <div class="flex flex-col gap-0.5">
-          <label for="description" class="font-[EB_Garamond] text-[1.2rem] w-full text-start"
-            >About:</label
-          >
-          <textarea
-            name="description"
-            placeholder="Add description"
-            v-model="description"
-            class="w-full border border-black bg-white px-4 py-3 text-sm text-black placeholder:text-black/40 resize-none focus:outline-none focus:border-[#a2dffd]"
-          ></textarea>
-          <small>0/300 characters</small>
-        </div>
+
         <div class="flex flex-col gap-4">
           <div class="flex flex-col gap-0.5">
             <label for="image" class="font-[EB_Garamond] text-[1.2rem] w-full text-start"
@@ -212,13 +197,27 @@
             </button>
           </div>
         </div>
+        <div class="flex flex-col gap-0.5">
+          <label for="description" class="font-[EB_Garamond] text-[1.2rem] w-full text-start"
+            >About:</label
+          >
+          <textarea
+            name="description"
+            placeholder="Add description"
+            v-model="description"
+            class="w-full border border-black bg-white px-4 py-3 text-sm text-black placeholder:text-black/40 resize-none focus:outline-none focus:border-[#a2dffd]"
+          ></textarea>
+          <small>0/300 characters</small>
+        </div>
       </div>
+
+      <p>{{ message }}</p>
 
       <button
         type="submit"
         class="mt-5 inline-flex items-center justify-center bg-black px-6 py-3 text-sm uppercase tracking-wide text-white transition hover:bg-[#a2dffd] hover:text-black cursor-pointer"
       >
-        Add
+        {{ cargando ? 'Sending data....' : 'Add info' }}
       </button>
     </form>
   </section>
@@ -226,7 +225,10 @@
 
 <script setup>
 import { ref, watch } from 'vue'
-import { saveData } from '@/services/administrateinfo'
+import { saveData, updateAbout } from '@/services/administrateinfo'
+
+const cargando = ref(false)
+const message = ref('')
 
 const title = ref('')
 const table = ref('')
@@ -241,22 +243,80 @@ const moreVideos = ref(0)
 const images = ref([])
 const videos = ref([])
 
+function convertToYouTubeEmbed(url) {
+  if (!url || typeof url !== 'string') return null;
+
+  try {
+    const parsedUrl = new URL(url);
+    let videoId = null;
+
+    // youtu.be/VIDEO_ID
+    if (parsedUrl.hostname === 'youtu.be') {
+      videoId = parsedUrl.pathname.slice(1);
+    }
+
+    // youtube.com/watch?v=VIDEO_ID
+    if (
+      parsedUrl.hostname.includes('youtube.com') &&
+      parsedUrl.searchParams.has('v')
+    ) {
+      videoId = parsedUrl.searchParams.get('v');
+    }
+
+    // youtube.com/embed/VIDEO_ID (already embedded)
+    if (
+      parsedUrl.hostname.includes('youtube.com') &&
+      parsedUrl.pathname.startsWith('/embed/')
+    ) {
+      videoId = parsedUrl.pathname.split('/embed/')[1];
+    }
+
+    if (!videoId) return null;
+
+    return `https://www.youtube.com/embed/${videoId}`;
+  } catch (error) {
+    return null;
+  }
+}
+
+
+
 const addInfo = async () => {
   if (!table.value) {
     alert('Select a category')
     return
   }
 
+  message.value = ''
+
   let data = {}
   if (table.value == 'about') {
     data = {
-      title: title.value,
-      description: about.value,
-      image: images.value[0],
-      tools: tools.value,
-      contacts: contacts.value,
+      title: title?.value,
+      description: about?.value,
+      image: images?.value[0],
+      tools: tools?.value,
+      contacts: contacts?.value,
+    }
+    const cleanData = JSON.parse(JSON.stringify(data))
+    cargando.value = true
+    const resultFromDataBase = await updateAbout(cleanData)
+    if (resultFromDataBase.ok) {
+      message.value = resultFromDataBase.message
+      title.value = ''
+      about.value = ''
+      images.value = []
+      tools.value = ''
+      contacts.value = ''
+      cargando.value = false
+    } else {
+      message.value = resultFromDataBase.message
     }
   } else {
+    videos.value = videos.value.map(element =>
+      convertToYouTubeEmbed(element)
+    );
+
     data = {
       title: title.value,
       description: description.value,
@@ -264,10 +324,21 @@ const addInfo = async () => {
       image: images?.value,
       video: videos?.value,
     }
-  }
 
-  const cleanData = JSON.parse(JSON.stringify(data))
-  await saveData(cleanData, table.value)
+    const cleanData = JSON.parse(JSON.stringify(data))
+    const resultFromDataBase = await saveData(cleanData, table.value)
+    if (resultFromDataBase.ok) {
+      message.value = resultFromDataBase.message
+      title.value = ''
+      description.value = ''
+      date.value = ''
+      images.value = []
+      videos.value = []
+      cargando.value = false
+    } else {
+      message.value = resultFromDataBase.message
+    }
+  }
 }
 
 watch(moreImages, (n) => {
