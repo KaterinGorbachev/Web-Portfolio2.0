@@ -184,7 +184,7 @@
       </div>
     </div>
   </section>
-  <section class="relative flex flex-col h-screen lg:m-h-screen pt-[10vh] bg-[#a2dffd]">
+  <section class="relative flex flex-col min-h-screen pt-[10vh] bg-[#a2dffd]">
     <p
       class="text-xl font-[Roboto_Slab] uppercase tracking-wide w-full px-8 lg:text-start text-center text-gray-500"
     >

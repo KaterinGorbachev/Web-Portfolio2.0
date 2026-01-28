@@ -1,69 +1,218 @@
-# marina-portfolio
+# Marina Borisova - Portfolio Website
 
-This template should help get you started developing with Vue 3 in Vite.
+A modern, responsive portfolio website showcasing creative work, projects, and professional information for Marina Borisova, a creative artist, illustrator, motion designer, and animator.
 
-## Recommended IDE Setup
+## What It Does
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+This is a full-featured portfolio website built with Vue 3 that displays:
 
-## Recommended Browser Setup
+- **Presentation & About Section**: Hero section with video background and biographical information
+- **Projects Showcase**: Interactive portfolio of creative projects with descriptions, images, and videos
+- **Studies & Learning**: Educational background and skill development documentation
+- **Admin Dashboard**: Secure content management area for updating portfolio information (requires authentication)
+- **Responsive Design**: Mobile-first approach using Tailwind CSS for optimal viewing across all devices
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Features
 
-## Customize configuration
+- **Modern Tech Stack**: Vue 3 with Vite, providing fast development and optimized production builds
+- **Real-time Database**: Firebase integration for dynamic content management
+- **Admin Authentication**: Role-based access control with secure admin area
+- **Video Integration**: Embedded video showcases and YouTube integration
+- **Performance Optimized**: Lazy loading, code splitting, and production build optimization
+- **Testing Coverage**: Unit tests with Vitest and end-to-end tests with Playwright
+- **Code Quality**: Automated linting with ESLint and code formatting with Prettier
+- **Deployment Ready**: Pre-configured for Vercel deployment
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Quick Start
 
-## Project Setup
+### Prerequisites
 
-```sh
+- Node.js 20.19.0 or higher (22.12.0+ recommended)
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd marina-portfolio
+```
+
+2. Install dependencies:
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+3. Set up environment variables:
+   - Create a `.env.local` file in the root directory
+   - Add your Firebase credentials:
+     ```
+     VITE_APP_FIREBASE_API_KEY=your_api_key
+     VITE_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
+     VITE_APP_FIREBASE_PROJECT_ID=your_project_id
+     VITE_APP_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+     VITE_APP_FIREBASE_MESSAGER_SENDER_ID=your_sender_id
+     VITE_APP_FIREBASE_APP_ID=your_app_id
+     ```
 
-```sh
+### Development
+
+Start the development server with hot reload:
+```bash
 npm run dev
 ```
 
-### Compile and Minify for Production
+The application will be available at `http://localhost:5173`
 
-```sh
+### Building
+
+Create an optimized production build:
+```bash
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+Preview the production build locally:
+```bash
+npm run preview
+```
 
-```sh
+## Testing
+
+### Unit Tests
+```bash
 npm run test:unit
 ```
 
-### Run End-to-End Tests with [Playwright](https://playwright.dev)
-
-```sh
-# Install browsers for the first run
+### End-to-End Tests
+```bash
+# Install browsers (required for first run)
 npx playwright install
 
-# When testing on CI, must build the project first
-npm run build
-
-# Runs the end-to-end tests
+# Run tests
 npm run test:e2e
-# Runs the tests only on Chromium
-npm run test:e2e -- --project=chromium
-# Runs the tests of a specific file
-npm run test:e2e -- tests/example.spec.ts
-# Runs the tests in debug mode
-npm run test:e2e -- --debug
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## Code Quality
 
-```sh
+### Linting
+```bash
 npm run lint
 ```
+
+This runs both ESLint and Oxlint for comprehensive code analysis.
+
+### Code Formatting
+```bash
+npm run format
+```
+
+Formats code using Prettier.
+
+## Project Structure
+
+```
+src/
+├── components/          # Reusable Vue components (Header, ProjectCard, StudyCard)
+├── views/              # Page-level components (Presentation, Projects, Studies, Access, Admin)
+├── router/             # Vue Router configuration for navigation
+├── stores/             # Pinia store for authentication/access state
+├── database/           # Firebase configuration and setup
+├── services/           # Business logic (authentication, error handling)
+├── styles/             # Global styles and Tailwind CSS configuration
+├── images/             # Static image assets
+└── videos/             # Video assets for showcase
+```
+
+## Environment Variables
+
+Required environment variables for Firebase integration:
+
+| Variable | Description |
+|----------|-------------|
+| `VITE_APP_FIREBASE_API_KEY` | Firebase API key |
+| `VITE_APP_FIREBASE_AUTH_DOMAIN` | Firebase authentication domain |
+| `VITE_APP_FIREBASE_PROJECT_ID` | Firebase project ID |
+| `VITE_APP_FIREBASE_STORAGE_BUCKET` | Firebase storage bucket URL |
+| `VITE_APP_FIREBASE_MESSAGER_SENDER_ID` | Firebase messaging sender ID |
+| `VITE_APP_FIREBASE_APP_ID` | Firebase application ID |
+
+## Technologies Used
+
+- **Frontend**: Vue 3, Vue Router, Pinia
+- **Styling**: Tailwind CSS 4, custom fonts
+- **Build Tool**: Vite
+- **Backend Services**: Firebase (Firestore, Authentication)
+- **Testing**: Vitest (unit), Playwright (e2e)
+- **Code Quality**: ESLint, Oxlint, Prettier
+- **Deployment**: Vercel
+
+## Browser Support
+
+- Chrome, Edge, Brave (Chromium-based browsers)
+- Firefox
+- Safari
+
+Recommended: Enable Vue.js DevTools for development:
+- [Vue.js devtools for Chrome](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
+- [Vue.js devtools for Firefox](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
+
+## Getting Help
+
+### Resources
+
+- [Vue 3 Documentation](https://vuejs.org/)
+- [Vite Documentation](https://vite.dev/)
+- [Firebase Documentation](https://firebase.google.com/docs)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+### Development Setup
+
+For the best development experience, use:
+- **IDE**: [VS Code](https://code.visualstudio.com/) + [Vue (Official) extension](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (disable Vetur if installed)
+- **Browser DevTools**: Enable custom object formatters for better debugging
+
+### Common Issues
+
+If you encounter build or runtime issues:
+1. Ensure all environment variables are properly set in `.env.local`
+2. Clear `node_modules` and reinstall:
+   ```bash
+   rm -rf node_modules && npm install
+   ```
+3. Check Node.js version matches requirements:
+   ```bash
+   node --version
+   ```
+4. Review linting errors:
+   ```bash
+   npm run lint
+   ```
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Create a feature branch from `main`
+2. Make your changes and test them thoroughly
+3. Run linting and formatting:
+   ```bash
+   npm run lint && npm run format
+   ```
+4. Ensure all tests pass:
+   ```bash
+   npm run test:unit && npm run test:e2e
+   ```
+5. Commit with clear, descriptive messages
+6. Push to your branch and create a pull request
+
+## Maintainer
+
+Marina Borisova - Creative artist, illustrator, motion designer, and animator.
+
+## License
+
+This project is proprietary and all rights are reserved. See the LICENSE file for details.
+
+## Deployment
+
+This project is configured for deployment on Vercel. The `vercel.json` configuration handles client-side routing for the single-page application.
