@@ -2,7 +2,7 @@
   <section class="relative h-screen">
     <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
       <source
-        src="/src/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgforAbout.MP4"
+        src="/src/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgforAboutXS.MP4"
         type="video/mp4"
       />
     </video>
@@ -63,41 +63,10 @@
       <h2
         class="text-2xl font-[Roboto_Slab] uppercase tracking-wide w-full p-8 text-start lg:text-center text-[#efefef]"
       >
-        Latest projects
+        Static & Motion
       </h2>
-      <div v-if="projects.length>0">
-        <div class="pt-4 relative"  v-for="(project, index) in projects" :key="index">
-          <h3
-            class="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 text-xl font-[Roboto_Slab] lowercase bg-white/90 px-2 py-1 tracking-widest text-black pointer-events-none"
-          >
-            {{ project?.title }}
-          </h3>
-          <div class="galery overflow-x-auto pb-8">
-            <div class="flex gap-2 px-6 w-max">
-              <div
-                v-if="project?.image"
-                class="shrink-0 w-[320px] h-[200px]"
-                v-for="(link, index) in project.image"
-                :key="index"
-              >
-                <img :src="link" class="w-full h-full object-cover" />
-              </div>
-              <div
-                v-if="project?.video"
-                v-for="(link, index) in project.video"
-                :key="index"
-                class="shrink-0 w-[320px] h-[200px]"
-              >
-                <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                  <source :src="link" type="video/mp4" />
-                </video>
-              </div>
-            </div>
-          </div>
-        </div>
 
-      </div>
-      <div v-else>
+      <div>
         <div class="pt-4 relative">
           <h3
             class="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 text-xl font-[Roboto_Slab] lowercase bg-white/90 px-2 py-1 tracking-widest text-black pointer-events-none "
@@ -110,8 +79,13 @@
                 class="shrink-0 w-[320px] h-[200px]"
               >
                 <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                  <source src="/src/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgabstract1.MP4" type="video/mp4" />
+                  <source src="/src/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgabstract1XS.MP4" type="video/mp4" />
                 </video>
+              </div>
+              <div
+                class="shrink-0 w-[320px] h-[200px]"
+              >
+                <img src="/src/images/CopyrightAllRightsReservedMarinaBorisovaabstract1.jpg" class="w-full h-full object-cover" />
               </div>
               <div
                 class="shrink-0 w-[320px] h-[200px]"
@@ -123,9 +97,19 @@
               <div
                 class="shrink-0 w-[320px] h-[200px]"
               >
+                <img src="/src/images/CopyrightAllRightsReservedMarinaBorisovaabstract3.jpg" class="w-full h-full object-cover" />
+              </div>
+              <div
+                class="shrink-0 w-[320px] h-[200px]"
+              >
                 <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                  <source src="/src/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgabstract3.MP4" type="video/mp4" />
+                  <source src="/src/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgabstract3XS.MP4" type="video/mp4" />
                 </video>
+              </div>
+               <div
+                class="shrink-0 w-[320px] h-[200px]"
+              >
+                <img src="/src/images/CopyrightAllRightsReservedMarinaBorisovaabstract4.jpg" class="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -142,40 +126,57 @@
                 class="shrink-0 w-[320px] h-[200px]"
               >
                 <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                  <source src="/src/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgfor2025silentdance.MP4" type="video/mp4" />
+                  <source src="/src/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgfor2025silentdanceXS.MP4" type="video/mp4" />
                 </video>
               </div>
               <div
                 class="shrink-0 w-[320px] h-[200px]"
               >
                 <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                  <source src="/src/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgfor2025dncingman.MP4" type="video/mp4" />
+                  <source src="/src/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgfor2025dncingmanXS.MP4" type="video/mp4" />
                 </video>
               </div>
 
             </div>
           </div>
         </div>
-        <div class="pt-[1rem] relative">
+        <div class="pt-4 relative">
           <h3
             class="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 text-xl font-[Roboto_Slab] lowercase bg-white/90 px-2 py-1 tracking-widest text-black pointer-events-none"
           >
-            Transformation
+            posters
           </h3>
           <div class="galery overflow-x-auto pb-8">
             <div class="flex gap-2 px-6 w-max">
               <div
                 class="shrink-0 w-[320px] h-[200px]"
               >
-                <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                  <source src="/src/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgfalling.MP4" type="video/mp4" />
-                </video>
-              </div>
+                <img src="/src/images/CopyrightAllRightsReservedMarinaBorisovaabstractman.jpg" class="w-full h-full object-cover" />
 
+              </div>
+              <div
+                class="shrink-0 w-[320px] h-[200px]"
+              >
+                <img src="/src/images/CopyrightAllRightsReservedMarinaBorisovaabstracthelloween.jpg" class="w-full h-full object-cover" />
+
+              </div>
+              <div
+                class="shrink-0 w-[320px] h-[200px]"
+              >
+                <img src="/src/images/CopyrightAllRightsReservedMarinaBorisovaabstractmonte.jpg" class="w-full h-full object-cover" />
+
+              </div>
+              <div
+                class="shrink-0 w-[320px] h-[200px]"
+              >
+                <img src="/src/images/CopyrightAllRightsReservedMarinaBorisovaabstracttiger.jpg" class="w-full h-full object-cover" />
+
+              </div>
 
             </div>
           </div>
         </div>
+
 
       </div>
 
@@ -231,6 +232,7 @@ onMounted(async () => {
   dataProjects.value = await getInfo('projects')
   if (dataProjects.value.ok) {
     projects.value = dataProjects.value.data
+
   }
 })
 </script>

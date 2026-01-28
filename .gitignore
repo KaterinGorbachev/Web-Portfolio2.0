@@ -3,6 +3,9 @@ env/
 .venv
 venv/
 
+.code_samples
+
+
 styles.txt
 
 
