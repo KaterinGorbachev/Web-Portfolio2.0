@@ -75,13 +75,7 @@
           </h3>
           <div class="galery overflow-x-auto pb-8">
             <div class="flex gap-2 px-6 w-max">
-              <div
-                class="shrink-0 w-[320px] h-[200px]"
-              >
-                <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                  <source src="videos/Copyrightmarinaborisovaallrightsreservedsaintpetersburgabstract1XS.mp4" type="video/mp4" />
-                </video>
-              </div>
+              
               <div
                 class="shrink-0 w-[320px] h-[200px]"
               >
