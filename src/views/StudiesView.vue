@@ -23,7 +23,7 @@
     >
     <hr>
     <div class="flex flex-col lg:flex-row px-8 py-8 gap-[3rem] justify-between items-start lg:items-center">
-      <div class="flex">
+      <div class="flex flex-col">
         <p class="font-[EB_Garamond] text-2xl text-start">Contacts: </p>
         <p>{{ about?.contacts }}</p>
       </div>
