@@ -2,7 +2,7 @@
   <section class="relative h-screen">
     <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
       <source
-        src="/src/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgforAboutXS.MP4"
+        src="/src/videos/CopyrightmarinaborisovaallrightsreservedsaintpetersburgforaboutXS.mp4"
         type="video/mp4"
       />
     </video>
