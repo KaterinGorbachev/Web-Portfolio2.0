@@ -79,7 +79,7 @@
                 class="shrink-0 w-[320px] h-[200px]"
               >
                 <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                  <source src="/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgabstract1XS.MP4" type="video/mp4" />
+                  <source src="/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgabstract1XS.mp4" type="video/mp4" />
                 </video>
               </div>
               <div
@@ -91,7 +91,7 @@
                 class="shrink-0 w-[320px] h-[200px]"
               >
                 <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                  <source src="/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgabstract2.MP4" type="video/mp4" />
+                  <source src="/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgabstract2.mp4" type="video/mp4" />
                 </video>
               </div>
               <div
@@ -103,7 +103,7 @@
                 class="shrink-0 w-[320px] h-[200px]"
               >
                 <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                  <source src="/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgabstract3XS.MP4" type="video/mp4" />
+                  <source src="/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgabstract3XS.mp4" type="video/mp4" />
                 </video>
               </div>
                <div
@@ -126,14 +126,14 @@
                 class="shrink-0 w-[320px] h-[200px]"
               >
                 <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                  <source src="/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgfor2025silentdanceXS.MP4" type="video/mp4" />
+                  <source src="/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgfor2025silentdanceXS.mp4" type="video/mp4" />
                 </video>
               </div>
               <div
                 class="shrink-0 w-[320px] h-[200px]"
               >
                 <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                  <source src="/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgfor2025dncingmanXS.MP4" type="video/mp4" />
+                  <source src="/videos/CopyrightMarinaBorisovaAllRightsReservedSaintPetersburgfor2025dncingmanXS.mp4" type="video/mp4" />
                 </video>
               </div>
 
