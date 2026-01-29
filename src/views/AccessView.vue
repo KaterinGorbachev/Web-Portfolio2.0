@@ -52,8 +52,8 @@ const getAccess = () => {
   if (inputPassword.value.trim() === password) {
     accessStore.setAdmin(true)
 
-    toast.success("Access granted", {
-      timeout: 2500,
+    toast.info("Access granted", {
+      timeout: 1000,
     })
 
     router.push('/recordadmin')
