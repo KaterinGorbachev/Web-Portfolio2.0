@@ -1,6 +1,6 @@
 <template>
   <section class="h-[80vh] flex justify-center items-center pt-[80px]">
-    <div class="shadow-md w-[90%] lg:w-[60%] gap-[1.75em] p-8 rounded flex flex-col items-center">
+    <div class="shadow-md w-[90%] lg:w-[40%] gap-[1.75em] p-8 rounded flex flex-col items-center">
       <div class="flex flex-col gap-0.5 items-start lg:items-center">
         <h2
           class="text-2xl font-[Roboto_Slab] uppercase tracking-wide w-full text-start lg:text-center"
@@ -30,6 +30,9 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAccessStore } from '@/stores/access'
+import { useToast } from "vue-toastification";
+
+const toast = useToast()
 
 const accessStore = useAccessStore()
 accessStore.setAdmin(false)
@@ -41,14 +44,23 @@ const inputPassword = ref('')
 
 const getAccess = () => {
   if (!inputPassword.value.trim()) {
-    alert('Enter password')
+    toast.error("Enter password", {
+      timeout: 4000,
+    })
     return
   }
   if (inputPassword.value.trim() === password) {
     accessStore.setAdmin(true)
+
+    toast.success("Access granted", {
+      timeout: 2500,
+    })
+
     router.push('/recordadmin')
   } else {
-    alert('Wrong password')
+    toast.error("Wrong password", {
+      timeout: 4000,
+    })
     return
   }
 }

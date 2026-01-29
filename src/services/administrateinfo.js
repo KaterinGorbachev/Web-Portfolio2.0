@@ -64,7 +64,6 @@ export const updateAbout = async (data) => {
       ok: true,
       message: 'Information was added successfully',
     }
-
   } catch (error) {
     console.error('Firebase getInfo error:', error)
 

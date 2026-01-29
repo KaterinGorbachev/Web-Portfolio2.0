@@ -61,7 +61,21 @@
       <hr />
     </div>
     <p class="mt-auto p-8 text-gray-500 text-center lg:text-start">
-      &copy; Marina Borisova. All rights reserved, Saint-Petersburg, 2025. All illustrations, animations, characters, designs, and visual content on this website are the exclusive property of Marina Borisova and are protected by international copyright laws. Unauthorized use, reproduction, modification, distribution, or display of any artwork without prior written permission is strictly prohibited. The artwork on this website may not be used for AI training, machine learning datasets, NFTs, or blockchain-related projects without explicit written permission from the artist. | <i>Web site made and designed by <a href="https://www.linkedin.com/in/katerina-gorbacheva-93717324a/" class="underline underline-offset-8 hover:text-gray-700 hover:decoration-gray-700 transition-colors duration-200">Ekaterina Gorbacheva</a>.</i>
+      &copy; Marina Borisova. All rights reserved, Saint-Petersburg, 2025. All illustrations,
+      animations, characters, designs, and visual content on this website are the exclusive property
+      of Marina Borisova and are protected by international copyright laws. Unauthorized use,
+      reproduction, modification, distribution, or display of any artwork without prior written
+      permission is strictly prohibited. The artwork on this website may not be used for AI
+      training, machine learning datasets, NFTs, or blockchain-related projects without explicit
+      written permission from the artist. |
+      <i
+        >Web site made and designed by
+        <a
+          href="https://www.linkedin.com/in/katerina-gorbacheva-93717324a/"
+          class="underline underline-offset-8 hover:text-gray-700 hover:decoration-gray-700 transition-colors duration-200"
+          >Ekaterina Gorbacheva</a
+        >.</i
+      >
     </p>
   </section>
 </template>

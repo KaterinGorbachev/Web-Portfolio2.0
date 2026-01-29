@@ -14,7 +14,9 @@
         </h2>
         <p class="w-[70%] lg:w-[20%] font-[EB_Garamond] text-[16px] text-start">{{ date }}</p>
       </div>
-      <p class="font-[EB_Garamond] text-[16px] lg:w-[70%] text-start text-[#3f3f3f]">{{ description }}</p>
+      <p class="font-[EB_Garamond] text-[16px] lg:w-[70%] text-start text-[#3f3f3f]">
+        {{ description }}
+      </p>
     </div>
   </div>
 </template>

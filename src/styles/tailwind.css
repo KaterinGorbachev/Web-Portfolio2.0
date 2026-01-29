@@ -1,1 +1,38 @@
 @import 'tailwindcss';
+
+
+/* Base toast styling */
+.Vue-Toastification__toast {
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 8px;
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Success */
+.Vue-Toastification__toast--success {
+  border-left: 6px solid #28a745;
+}
+
+/* Error */
+.Vue-Toastification__toast--error {
+  border-left: 6px solid orange;
+}
+
+/* Info */
+.Vue-Toastification__toast--info {
+  background-color: #a2dffd;
+  color: #000000;
+  border-left: 6px solid #4aa3c7;
+}
+
+/* Close button */
+.Vue-Toastification__close-button {
+  color: #000000;
+  opacity: 0.6;
+}
+
+.Vue-Toastification__close-button:hover {
+  opacity: 1;
+}

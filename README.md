@@ -23,7 +23,6 @@ This is a full-featured portfolio website built with Vue 3 that displays:
 - **Code Quality**: Automated linting with ESLint and code formatting with Prettier
 - **Deployment Ready**: Pre-configured for Vercel deployment
 
-## Quick Start
 
 ### Prerequisites
 
@@ -33,14 +32,20 @@ This is a full-featured portfolio website built with Vue 3 that displays:
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd marina-portfolio
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
+npm install dotenv
+npm install firebase
+npm install tailwindcss @tailwindcss/vite
+npm install --save vue-toastification@next
 ```
 
 3. Set up environment variables:
@@ -54,10 +59,13 @@ npm install
      VITE_APP_FIREBASE_MESSAGER_SENDER_ID=your_sender_id
      VITE_APP_FIREBASE_APP_ID=your_app_id
      ```
+   - Add your secret key
+
 
 ### Development
 
 Start the development server with hot reload:
+
 ```bash
 npm run dev
 ```
@@ -67,11 +75,13 @@ The application will be available at `http://localhost:5173`
 ### Building
 
 Create an optimized production build:
+
 ```bash
 npm run build
 ```
 
 Preview the production build locally:
+
 ```bash
 npm run preview
 ```
@@ -79,11 +89,13 @@ npm run preview
 ## Testing
 
 ### Unit Tests
+
 ```bash
 npm run test:unit
 ```
 
 ### End-to-End Tests
+
 ```bash
 # Install browsers (required for first run)
 npx playwright install
@@ -95,6 +107,7 @@ npm run test:e2e
 ## Code Quality
 
 ### Linting
+
 ```bash
 npm run lint
 ```
@@ -102,6 +115,7 @@ npm run lint
 This runs both ESLint and Oxlint for comprehensive code analysis.
 
 ### Code Formatting
+
 ```bash
 npm run format
 ```
@@ -127,14 +141,19 @@ src/
 
 Required environment variables for Firebase integration:
 
-| Variable | Description |
-|----------|-------------|
-| `VITE_APP_FIREBASE_API_KEY` | Firebase API key |
-| `VITE_APP_FIREBASE_AUTH_DOMAIN` | Firebase authentication domain |
-| `VITE_APP_FIREBASE_PROJECT_ID` | Firebase project ID |
-| `VITE_APP_FIREBASE_STORAGE_BUCKET` | Firebase storage bucket URL |
-| `VITE_APP_FIREBASE_MESSAGER_SENDER_ID` | Firebase messaging sender ID |
-| `VITE_APP_FIREBASE_APP_ID` | Firebase application ID |
+| Variable                               | Description                    |
+| -------------------------------------- | ------------------------------ |
+| `VITE_APP_FIREBASE_API_KEY`            | Firebase API key               |
+| `VITE_APP_FIREBASE_AUTH_DOMAIN`        | Firebase authentication domain |
+| `VITE_APP_FIREBASE_PROJECT_ID`         | Firebase project ID            |
+| `VITE_APP_FIREBASE_STORAGE_BUCKET`     | Firebase storage bucket URL    |
+| `VITE_APP_FIREBASE_MESSAGER_SENDER_ID` | Firebase messaging sender ID   |
+| `VITE_APP_FIREBASE_APP_ID`             | Firebase application ID        |
+
+Create your secret key to access Management Board 
+
+ - VITE_APP_ADMIN_CODE = your_key
+
 
 ## Technologies Used
 
@@ -153,10 +172,10 @@ Required environment variables for Firebase integration:
 - Safari
 
 Recommended: Enable Vue.js DevTools for development:
+
 - [Vue.js devtools for Chrome](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
 - [Vue.js devtools for Firefox](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
 
-## Getting Help
 
 ### Resources
 
@@ -164,16 +183,94 @@ Recommended: Enable Vue.js DevTools for development:
 - [Vite Documentation](https://vite.dev/)
 - [Firebase Documentation](https://firebase.google.com/docs)
 - [Tailwind CSS](https://tailwindcss.com/)
+- [Vue-Toastification](https://vue-toastification.maronato.dev/)
+- [Pinia](https://pinia.vuejs.org/)
+
+#### Toastification 
+
+```bash
+npm install --save vue-toastification@next
+```
+
+```javascript
+// main.js
+
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+import Toast from "vue-toastification";
+import "vue-toastification/dist/index.css";
+
+import App from './App.vue'
+import router from './router'
+
+const app = createApp(App)
+
+const toastOptions = {
+  position: "top-center", // center of the page
+  timeout: 4000,
+  closeOnClick: false,
+  pauseOnHover: true,
+  draggable: false,
+  showCloseButtonOnHover: false,
+  hideProgressBar: false,
+  closeButton: "button",
+};
+
+app.use(createPinia())
+app.use(Toast, toastOptions)
+app.use(router)
+
+app.mount('#app')
+
+
+```
+
+```javascript
+
+// on the component
+
+import { useToast } from "vue-toastification";
+
+const toast = useToast()
+
+const getAccess = () => {
+  if (!inputPassword.value.trim()) {
+    toast.error("Enter password", {
+      timeout: 4000,
+    })
+    return
+  }
+  if (inputPassword.value.trim() === password) {
+    accessStore.setAdmin(true)
+
+    toast.success("Access granted", {
+      timeout: 2500,
+    })
+
+    router.push('/recordadmin')
+  } else {
+    toast.error("Wrong password", {
+      timeout: 4000,
+    })
+    return
+  }
+}
+
+```
+
+
 
 ### Development Setup
 
 For the best development experience, use:
+
 - **IDE**: [VS Code](https://code.visualstudio.com/) + [Vue (Official) extension](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (disable Vetur if installed)
 - **Browser DevTools**: Enable custom object formatters for better debugging
 
 ### Common Issues
 
 If you encounter build or runtime issues:
+
 1. Ensure all environment variables are properly set in `.env.local`
 2. Clear `node_modules` and reinstall:
    ```bash
