@@ -4,7 +4,7 @@
     <!-- Background image -->
     <div
       class="absolute inset-0 bg-cover bg-center"
-      style="background-image: url('/public/MarinaBorisovaboardback.jpg')"
+      style="background-image: url('/MarinaBorisovaboardback.jpg')"
     ></div>
 
     <!-- Optional dark overlay for readability -->
