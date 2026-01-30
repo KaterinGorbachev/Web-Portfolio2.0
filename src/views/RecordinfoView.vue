@@ -1,5 +1,4 @@
 <template>
-
   <div class="relative min-h-screen w-full overflow-hidden">
     <!-- Background image -->
     <div
@@ -11,14 +10,17 @@
     <div class="absolute inset-0 bg-black/40"></div>
 
     <div class="relative z-10 flex min-h-screen">
-      <section class="w-full p-2 flex flex-col gap-4 items-center pt-[80px] lg:w-[49%] bg-white ml-auto">
+      <section
+        class="w-full p-2 flex flex-col gap-4 items-center pt-[80px] lg:w-[49%] bg-white ml-auto"
+      >
         <h2
           class="text-2xl font-[Roboto_Slab] uppercase tracking-wide w-full px-8 text-start lg:text-center"
         >
           Managment board
         </h2>
         <p class="font-[EB_Garamond] text-[1.2rem] px-8 w-full text-start lg:text-center">
-          Select a category to add information to the specific page. Fields with * must be fulfilled.
+          Select a category to add information to the specific page. Fields with * must be
+          fulfilled.
         </p>
         <form @submit.prevent="addInfo" class="p-8 flex flex-col gap-4 w-full">
           <select
@@ -109,7 +111,7 @@
             </div>
           </div>
 
-          <div v-else>
+          <div v-else class="flex flex-col gap-[2rem]">
             <div class="flex items-start w-full justify-between">
               <div class="flex flex-col gap-0.5 w-[75%]">
                 <label for="title" class="font-[EB_Garamond] text-[1.2rem] w-full text-start"
@@ -156,7 +158,7 @@
                 />
               </div>
 
-              <div class="flex flex-col gap-4">
+              <div class="flex w-full justify-between">
                 <button
                   type="button"
                   @click="moreImages--"
@@ -168,7 +170,7 @@
                 <button
                   type="button"
                   @click="moreImages++"
-                  class="inline-flex items-center justify-center border border-black bg-white px-6 py-3 text-sm uppercase tracking-wide text-black transition hover:bg-black hover:text-white cursor-pointer"
+                  class="inline-flex items-center justify-center border border-black bg-black px-6 py-3 text-sm uppercase tracking-wide text-white transition hover:bg-white hover:text-black cursor-pointer"
                 >
                   + Add image
                 </button>
@@ -181,33 +183,15 @@
                 >
 
                 <input
-                  v-for="(_, index) in moreVideos"
-                  :key="index"
                   type="text"
                   name="video"
                   placeholder="Enter link to video"
-                  v-model="videos[index]"
+                  v-model="videos[0]"
                   class="w-full border border-black bg-white px-4 py-3 text-sm text-black placeholder:text-black/40 focus:outline-none focus:border-[#a2dffd]"
                 />
               </div>
 
-              <div class="flex flex-col gap-4">
-                <button
-                  type="button"
-                  @click="moreVideos--"
-                  v-if="moreVideos > 0"
-                  class="inline-flex items-center justify-center border border-black bg-transparent px-6 py-3 text-sm uppercase tracking-wide text-black transition hover:bg-black hover:text-white cursor-pointer"
-                >
-                  - Delete video
-                </button>
-                <button
-                  type="button"
-                  @click="moreVideos++"
-                  class="inline-flex items-center justify-center border border-black bg-white px-6 py-3 text-sm uppercase tracking-wide text-black transition hover:bg-black hover:text-white cursor-pointer"
-                >
-                  + Add video
-                </button>
-              </div>
+
             </div>
             <div class="flex flex-col gap-0.5">
               <label for="description" class="font-[EB_Garamond] text-[1.2rem] w-full text-start"
@@ -233,11 +217,8 @@
           </button>
         </form>
       </section>
-
     </div>
-
   </div>
-
 </template>
 
 <script setup>
@@ -314,7 +295,6 @@ const addInfo = async () => {
     cargando.value = true
     const resultFromDataBase = await updateAbout(cleanData)
     if (resultFromDataBase.ok) {
-
       toast.success(resultFromDataBase.message, {
         timeout: 500,
       })
@@ -330,7 +310,6 @@ const addInfo = async () => {
         timeout: 1500,
       })
       cargando.value = false
-
     }
   } else {
     videos.value = videos.value.map((element) => convertToYouTubeEmbed(element))

@@ -1,14 +1,23 @@
 <template>
   <div class="group relative flex flex-col bg-white overflow-hidden">
     <!-- Media -->
-    <div class="relative w-full h-[220px] lg:h-[400px] overflow-hidden">
-      <!-- Image -->
-      <img
-        v-for="(link, index) in image"
-        :key="index"
-        :src="link"
-        class="w-full lg:w-[60%] h-full object-cover"
-      />
+    <div class="relative w-full">
+      <div class="galery overflow-x-auto pb-8">
+        <div class="flex gap-2 px-6 w-max">
+          <!-- Image -->
+          <div class="shrink-0 w-[320px] lg:w-full max-w-100" v-for="(link, index) in image" :key="index">
+            <img
+            :src="link"
+            class="w-full h-full object-cover"
+            />
+          </div>
+
+        </div>
+
+      </div>
+
+
+
 
       <!-- Video -->
       <div v-for="(link, index) in video" :key="index" class="flex p-[1rem]">

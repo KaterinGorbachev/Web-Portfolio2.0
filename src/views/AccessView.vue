@@ -30,7 +30,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAccessStore } from '@/stores/access'
-import { useToast } from "vue-toastification";
+import { useToast } from 'vue-toastification'
 
 const toast = useToast()
 
@@ -44,7 +44,7 @@ const inputPassword = ref('')
 
 const getAccess = () => {
   if (!inputPassword.value.trim()) {
-    toast.error("Enter password", {
+    toast.error('Enter password', {
       timeout: 4000,
     })
     return
@@ -52,13 +52,13 @@ const getAccess = () => {
   if (inputPassword.value.trim() === password) {
     accessStore.setAdmin(true)
 
-    toast.info("Access granted", {
+    toast.info('Access granted', {
       timeout: 1500,
     })
 
     router.push('/recordadmin')
   } else {
-    toast.error("Wrong password", {
+    toast.error('Wrong password', {
       timeout: 4000,
     })
     return
