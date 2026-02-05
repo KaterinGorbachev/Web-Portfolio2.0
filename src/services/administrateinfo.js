@@ -1,5 +1,5 @@
 import { db } from '@/database/databaseconfig'
-import { doc, collection, addDoc, getDocs, updateDoc, serverTimestamp } from 'firebase/firestore'
+import { doc, collection, addDoc, getDocs, updateDoc, serverTimestamp, query, where, deleteDoc } from 'firebase/firestore'
 
 import { mapFirebaseError } from '@/services/firebaseErrors'
 
@@ -76,3 +76,67 @@ export const updateAbout = async (data) => {
     }
   }
 }
+
+
+
+export const getOneInfoToUpdateOrDelete = async (title, date, table) => {
+  try {
+    if (!table) {
+      throw new Error('Table name is required')
+    }
+
+  /*   const cleanTitle = title.trim().toLowerCase()
+    if (!title) {
+      throw new Error('Title is required')
+    } */
+    // Create a reference to the cities collection
+    const dataInTable = collection(db, table)
+    // Create a query against the collection.
+    const q = query(dataInTable, where("title", "==", title), where("date", "==", date))
+
+    const querySnapshot = await getDocs(q);
+
+    const data = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }))
+
+    return {
+      ok: true,
+      data,
+    }
+  } catch (error) {
+    console.error('Firebase getInfo error:', error)
+
+    return {
+      ok: false,
+      error: {
+        message: error.message || 'Failed to fetch data',
+        code: error.code || 'unknown',
+      },
+    }
+  }
+
+}
+
+export const deleteData = async (idDoc, table) => {
+  try{
+    await deleteDoc(doc(db, table, idDoc));
+    return {
+      ok: true,
+      message: 'Deleted successfully',
+    }
+  } catch (error) {
+    console.error('Firebase getInfo error:', error)
+
+    return {
+      ok: false,
+      error: {
+        message: error.message || 'Failed to fetch data',
+        code: error.code || 'unknown',
+      },
+    }
+  }
+
+}
+
