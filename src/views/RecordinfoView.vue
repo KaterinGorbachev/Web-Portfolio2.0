@@ -303,7 +303,8 @@
                   <p>{{ item?.date }}</p>
                   <p>{{ item?.description || 'Without description' }}</p>
                 </div>
-                <p class="font-[EB_Garamond] text-sm text-red-800"> {{ notFoundData ? `We did not find information with given title date:` : toDeleteDataPreview.length > 0 ? 'Are you shure about deleting this information?' : ''}} </p>
+                <p class="font-[EB_Garamond] text-md text-red-800"> Are you shure about deleting this information?</p>
+
 
                 <button @click="deleteInfoById(item.id)" type="button" class="my-10 inline-flex items-center justify-center bg-red-800 px-6 py-3 text-sm uppercase tracking-wide text-white transition hover:bg-[#a2dffd] hover:text-black cursor-pointer">Delete</button>
               </div>
@@ -311,6 +312,7 @@
 
 
             </div>
+            <p class="font-[EB_Garamond] text-lg text-red-800"> {{ notFoundData ? `We did not find information with given title and date!` : ''}} </p>
 
 
             <button
@@ -402,21 +404,20 @@ const searchInfo = async() => {
 
   cargando.value = true
   toDeleteDataPreview.value = []
-  notFoundData.value = true
+  notFoundData.value = false
+
+  console.log(table.value, title.value, date.value);
+
 
 
   //const result = await getOneInfoToUpdateOrDelete(title.value.trim().toLowerCase(), date.value, table.value)
   const result = await getOneInfoToUpdateOrDelete(title.value, date.value, table.value)
   if(result.ok){
     toDeleteDataPreview.value = result.data
-    console.log(toDeleteDataPreview.value);
-    if(toDeleteDataPreview.value.length != 0){
-      notFoundData.value = false
-      cargando.value = false
-
+    cargando.value = false
+    if(toDeleteDataPreview.value.length == 0){
+      notFoundData.value = true
     }
-
-
   } else {
       toast.error(result.message, {
         timeout: false,

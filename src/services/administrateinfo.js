@@ -92,7 +92,8 @@ export const getOneInfoToUpdateOrDelete = async (title, date, table) => {
     // Create a reference to the cities collection
     const dataInTable = collection(db, table)
     // Create a query against the collection.
-    const q = query(dataInTable, where("title", "==", title), where("date", "==", date))
+    //const q = query(dataInTable, where("title", "==", title), where("date", "==", date))
+    const q = query(dataInTable, where("date", "==", date))
 
     const querySnapshot = await getDocs(q);
 
