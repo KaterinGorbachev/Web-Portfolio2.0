@@ -10,17 +10,17 @@
     <div class="absolute inset-0 bg-black/30"></div>
 
     <div class="relative z-10 flex flex-col h-full items-center justify-center gap-2">
-      <h1 class="text-6xl font-[Roboto_Slab] text-white uppercase tracking-widest text-center">
+      <h1 class="text-6xl font-[Roboto_Slab] text-white uppercase tracking-widest text-center text-shadow-lg">
         {{ about?.title || 'Marina Borisova' }}
       </h1>
-      <p class="font-[EB_Garamond] text-xl w-full text-center text-white">
+      <p class="font-[EB_Garamond] text-xl w-full text-center text-white text-shadow-md">
         Creative artist, illustrator, motion designer, animator, dreamer...
       </p>
     </div>
   </section>
   <section class="relative">
     <h2
-      class="text-2xl font-[Roboto_Slab] uppercase tracking-wide w-full p-8 text-start lg:text-center"
+      class="text-xl lg:text-2xl font-[Roboto_Slab] uppercase tracking-wide w-full p-8 text-start lg:text-center"
     >
       About me
     </h2>
@@ -186,13 +186,13 @@
   </section>
   <section class="relative flex flex-col min-h-screen pt-[10vh] bg-[#a2dffd]">
     <p
-      class="text-xl font-[Roboto_Slab] uppercase tracking-wide w-full px-8 lg:text-start text-center text-gray-500"
+      class="text-xl font-[Roboto_Slab] uppercase tracking-wide w-full px-8  text-center text-gray-500"
     >
       next page
     </p>
     <router-link
       to="/projects"
-      class="text-2xl font-[Roboto_Slab] uppercase tracking-wide w-full px-8 pb-8 lg:text-start text-center transition-all delay-100 hover:font-bold"
+      class="text-2xl font-[Roboto_Slab] uppercase tracking-wide w-full px-8 pb-8  text-center transition-all delay-100 hover:font-bold"
       >All Projects ></router-link
     >
     <hr />

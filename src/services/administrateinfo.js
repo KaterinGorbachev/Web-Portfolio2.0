@@ -1,5 +1,15 @@
 import { db } from '@/database/databaseconfig'
-import { doc, collection, addDoc, getDocs, updateDoc, serverTimestamp, query, where, deleteDoc } from 'firebase/firestore'
+import {
+  doc,
+  collection,
+  addDoc,
+  getDocs,
+  updateDoc,
+  serverTimestamp,
+  query,
+  where,
+  deleteDoc,
+} from 'firebase/firestore'
 
 import { mapFirebaseError } from '@/services/firebaseErrors'
 
@@ -77,15 +87,13 @@ export const updateAbout = async (data) => {
   }
 }
 
-
-
 export const getOneInfoToUpdateOrDelete = async (title, date, table) => {
   try {
     if (!table) {
       throw new Error('Table name is required')
     }
 
-  /*   const cleanTitle = title.trim().toLowerCase()
+    /*   const cleanTitle = title.trim().toLowerCase()
     if (!title) {
       throw new Error('Title is required')
     } */
@@ -93,9 +101,9 @@ export const getOneInfoToUpdateOrDelete = async (title, date, table) => {
     const dataInTable = collection(db, table)
     // Create a query against the collection.
     //const q = query(dataInTable, where("title", "==", title), where("date", "==", date))
-    const q = query(dataInTable, where("date", "==", date))
+    const q = query(dataInTable, where('date', '==', date))
 
-    const querySnapshot = await getDocs(q);
+    const querySnapshot = await getDocs(q)
 
     const data = querySnapshot.docs.map((doc) => ({
       id: doc.id,
@@ -117,12 +125,11 @@ export const getOneInfoToUpdateOrDelete = async (title, date, table) => {
       },
     }
   }
-
 }
 
 export const deleteData = async (idDoc, table) => {
-  try{
-    await deleteDoc(doc(db, table, idDoc));
+  try {
+    await deleteDoc(doc(db, table, idDoc))
     return {
       ok: true,
       message: 'Deleted successfully',
@@ -138,6 +145,4 @@ export const deleteData = async (idDoc, table) => {
       },
     }
   }
-
 }
-

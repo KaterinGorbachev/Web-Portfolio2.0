@@ -2,8 +2,8 @@
   <div class="group relative flex flex-col bg-white overflow-hidden">
     <!-- Media -->
     <div class="relative w-full">
-      <div class="galery overflow-x-auto pb-8">
-        <div class="flex gap-2 px-6 w-max">
+      <div class="galery overflow-x-auto ">
+        <div class="flex gap-0.5 px-6 w-max">
           <!-- Image -->
           <div
             class="shrink-0 w-[320px] lg:w-full max-w-100"
@@ -56,15 +56,16 @@
     </div>
 
     <!-- Content -->
-    <div class="flex flex-col gap-3 p-6 text-black">
-      <p class="uppercase tracking-widest text-black py-1">
-        {{ date }}
-      </p>
-      <h3 class="text-xl font-[Roboto_Slab] uppercase tracking-wide">
+    <div class="flex flex-col gap-0.5 p-6">
+
+      <h3 class=" text-md lg:text-xl font-[Roboto_Slab] uppercase tracking-wide text-gray-900">
         {{ title }}
       </h3>
+      <p class="uppercase tracking-widest text-gray-600 py-1 text-sm">
+        {{ date }}
+      </p>
 
-      <p class="font-[EB_Garamond] text-[16px] leading-relaxed text-gray-900">
+      <p class="font-[EB_Garamond] text-[16px] leading-relaxed text-gray-800">
         {{ description }}
       </p>
     </div>

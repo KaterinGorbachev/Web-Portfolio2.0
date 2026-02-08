@@ -5,7 +5,7 @@
         <h2
           class="text-2xl font-[Roboto_Slab] uppercase tracking-wide w-full text-start lg:text-center"
         >
-          Access information management board
+          Access to the information management board
         </h2>
         <p class="font-[EB_Garamond] text-[1.2rem] w-full text-start lg:text-center">
           Enter the password to access the administration panel

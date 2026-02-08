@@ -6,15 +6,15 @@
       </div>
     </div>
     <div class="flex flex-col w-full">
-      <div class="flex flex-col-reverse lg:flex-row justify-between w-full">
-        <h2
-          class="w-full lg:w-[80%] text-[16px] font-[EB_Garamond] uppercase tracking-wide text-start"
+      <div class="flex flex-col justify-between w-full">
+        <h3
+          class="w-full lg:w-[80%] text-[14px] lg:text-[16px] font-[EB_Garamond] uppercase tracking-wide text-start text-gray-900"
         >
           {{ title }}
-        </h2>
-        <p class="w-[70%] lg:w-[20%] font-[EB_Garamond] text-[16px] text-start">{{ date }}</p>
+        </h3>
+        <p class="w-[70%] font-[EB_Garamond] text-sm text-start text-gray-600">{{ date }}</p>
       </div>
-      <p class="font-[EB_Garamond] text-[16px] lg:w-[70%] text-start text-[#3f3f3f]">
+      <p class="font-[EB_Garamond] text-[16px] text-start text-[#3f3f3f]">
         {{ description }}
       </p>
     </div>

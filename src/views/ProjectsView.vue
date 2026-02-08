@@ -1,7 +1,7 @@
 <template>
   <section class="flex flex-col mt-[80px]">
     <h1
-      class="text-2xl font-[Roboto_Slab] uppercase tracking-wide w-full p-8 text-start lg:text-center"
+      class="text-xl lg:text-2xl font-[Roboto_Slab] uppercase tracking-wide w-full p-8 text-start lg:text-center"
     >
       Projects
     </h1>
@@ -25,13 +25,13 @@
   </section>
   <section class="relative flex flex-col min-h-screen pt-[10vh] bg-[#a2dffd]">
     <p
-      class="text-xl font-[Roboto_Slab] uppercase tracking-wide w-full px-8 lg:text-start text-center text-gray-500"
+      class="text-md lg:text-xl font-[Roboto_Slab] uppercase tracking-wide w-full px-8  text-center text-gray-500"
     >
       next page
     </p>
     <router-link
       to="/studies"
-      class="text-2xl font-[Roboto_Slab] uppercase tracking-wide w-full px-8 pb-8 lg:text-start text-center transition-all delay-100 hover:font-bold"
+      class="text-xl lg:text-2xl font-[Roboto_Slab] uppercase tracking-wide w-full px-8 pb-8  text-center transition-all delay-100 hover:font-bold"
       >Studies & Experience ></router-link
     >
     <hr />

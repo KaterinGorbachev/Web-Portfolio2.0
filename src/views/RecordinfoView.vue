@@ -11,7 +11,7 @@
 
     <div class="relative z-10 flex min-h-screen">
       <section
-        class="w-full p-2 flex flex-col gap-4 items-center pt-[80px] lg:w-[49%] bg-white ml-auto"
+        class="w-full p-2 flex flex-col gap-4 items-start pt-[80px] lg:w-[49%]  bg-white ml-auto"
       >
         <h2
           class="text-2xl font-[Roboto_Slab] uppercase tracking-wide w-full px-8 text-start lg:text-center"
@@ -23,27 +23,27 @@
             :disabled="toggleAddInfo"
             type="button"
             @click="selectAddInfo"
-            :class="toggleAddInfo ? 'border-black  bg-[#a2dffd]  text-black ' : ' bg-transparent border-black  text-black transition hover:bg-black hover:text-white cursor-pointer'"
-            class="inline-flex items-center justify-center border   px-6 py-3 text-sm uppercase tracking-wide"
-            >
+            :class="
+              toggleAddInfo
+                ? 'border-black  bg-[#a2dffd]  text-black '
+                : ' bg-transparent border-black  text-black transition hover:bg-black hover:text-white cursor-pointer'
+            "
+            class="inline-flex items-center justify-center border px-6 py-3 text-sm uppercase tracking-wide"
+          >
             Add info
           </button>
-          <button
-            :disabled="toggleUpdateInfo"
-            type="button"
-            @click="selectUpdateInfo"
-            :class="toggleUpdateInfo ? 'border-black  bg-[#a2dffd]  text-black ' : ' bg-transparent border-black  text-black transition hover:bg-black hover:text-white cursor-pointer'"
-            class="inline-flex items-center justify-center border   px-6 py-3 text-sm uppercase tracking-wide"
-            >
-            Update info
-          </button>
+
           <button
             :disabled="toggleDeleteInfo"
             type="button"
             @click="selectDeleteInfo"
-            :class="toggleDeleteInfo ? 'border-black  bg-[#a2dffd]  text-black ' : ' bg-transparent border-black  text-black transition hover:bg-black hover:text-white cursor-pointer'"
-            class="inline-flex items-center justify-center border   px-6 py-3 text-sm uppercase tracking-wide"
-            >
+            :class="
+              toggleDeleteInfo
+                ? 'border-black  bg-red-500  text-black '
+                : ' bg-transparent border-black  text-black transition hover:bg-black hover:text-white cursor-pointer'
+            "
+            class="inline-flex items-center justify-center border px-6 py-3 text-sm uppercase tracking-wide"
+          >
             Delete info
           </button>
         </div>
@@ -142,8 +142,8 @@
             </div>
 
             <div v-else class="flex flex-col gap-[2rem]">
-              <div class="flex items-start w-full justify-between">
-                <div class="flex flex-col gap-0.5 w-[75%]">
+              <div class="flex flex-col-reverse lg:flex-row items-start w-full lg:justify-between gap-[1rem] ">
+                <div class="flex flex-col gap-0.5 lg:w-[75%] w-full">
                   <label for="title" class="font-[EB_Garamond] text-[1.2rem] w-full text-start"
                     >Title*:</label
                   >
@@ -157,7 +157,7 @@
                   />
                   <small>0/200 characters</small>
                 </div>
-                <div class="flex flex-col gap-0.5 w-[20%]">
+                <div class="flex flex-col gap-0.5 lg:w-[20%] ">
                   <label for="date" class="font-[EB_Garamond] text-[1.2rem] w-full text-start"
                     >Date*:</label
                   >
@@ -244,11 +244,10 @@
               {{ cargando ? 'Sending data....' : 'Add info' }}
             </button>
           </form>
-
         </div>
-        <div v-else-if="toggleDeleteInfo">
+        <div v-if="toggleDeleteInfo">
           <p class="font-[EB_Garamond] text-[1.2rem] px-8 w-full text-start lg:text-center">
-            To delete information first select a category and than fill all fields with *.
+            To delete information first select a category and then fill all fields with *.
           </p>
           <form @submit.prevent="searchInfo" class="p-8 flex flex-col gap-4 w-full">
             <select
@@ -262,23 +261,9 @@
               <option value="experience">Experience</option>
               <option value="projects">Projects</option>
             </select>
-            <div  class="flex flex-col gap-[2rem]">
-              <div class="flex items-start w-full justify-between">
-                <div class="flex flex-col gap-0.5 w-[75%]">
-                  <label for="title" class="font-[EB_Garamond] text-[1.2rem] w-full text-start"
-                    >Title*:</label
-                  >
-                  <input
-                    type="text"
-                    name="title"
-                    placeholder="Enter title"
-                    v-model="title"
-                    required
-                    class="w-full border border-black bg-white px-4 py-3 text-sm text-black placeholder:text-black/40 focus:outline-none focus:border-[#a2dffd]"
-                  />
-                  <small>Exactly as it was written and added to the category</small>
-                </div>
-                <div class="flex flex-col gap-0.5 w-[20%]">
+            <div class="flex flex-col gap-[2rem]">
+              <div class="flex items-start w-full justify-between flex-col gap-[1rem]">
+                <div class="flex flex-col gap-0.5 lg:w-[50%]">
                   <label for="date" class="font-[EB_Garamond] text-[1.2rem] w-full text-start"
                     >Date*:</label
                   >
@@ -290,41 +275,61 @@
                     class="w-full border border-black bg-white px-4 py-3 text-sm text-black placeholder:text-black/40 focus:outline-none focus:border-[#a2dffd]"
                   />
                 </div>
+                <div class="flex flex-col gap-0.5 w-full">
+                  <label for="title" class="font-[EB_Garamond] text-[1.2rem] w-full text-start"
+                    >Title:</label
+                  >
+                  <input
+                    type="text"
+                    name="title"
+                    placeholder="Enter title"
+                    v-model="title"
+
+                    class="w-full border border-black bg-white px-4 py-3 text-sm text-black placeholder:text-black/40 focus:outline-none focus:border-[#a2dffd]"
+                  />
+                  <small></small>
+                </div>
+
               </div>
-
-
             </div>
 
             <div class="flex flex-col">
               <div class="flex flex-col gap-0.5" v-for="item in toDeleteDataPreview" :key="item.id">
-                <label class="font-[EB_Garamond] text-[1.2rem] w-full text-start">Information preview:</label>
-                <div class="flex flex-col p-[1rem] gap-[0.75rem] border border-gray-600 text-gray-600 w-full h-[150px] overflow-x-hidden overflow-y-scroll" >
+                <label class="font-[EB_Garamond] text-[1.2rem] w-full text-start text-red-800"
+                  >Information preview:</label
+                >
+                <div
+                  class="flex flex-col p-[1rem] gap-[0.75rem] border border-red-800 text-gray-600 w-full h-[150px] overflow-x-hidden overflow-y-scroll"
+                >
                   <h1>{{ item?.title }}</h1>
                   <p>{{ item?.date }}</p>
                   <p>{{ item?.description || 'Without description' }}</p>
                 </div>
-                <p class="font-[EB_Garamond] text-md text-red-800"> Are you shure about deleting this information?</p>
+                <p class="font-[EB_Garamond] text-md text-red-800">
+                  Are you shure about deleting this information?
+                </p>
 
-
-                <button @click="deleteInfoById(item.id)" type="button" class="my-10 inline-flex items-center justify-center bg-red-800 px-6 py-3 text-sm uppercase tracking-wide text-white transition hover:bg-[#a2dffd] hover:text-black cursor-pointer">Delete</button>
+                <button
+                  @click="deleteInfoById(item.id)"
+                  type="button"
+                  class="my-10 inline-flex items-center justify-center bg-red-800 px-6 py-3 text-sm uppercase tracking-wide text-white transition hover:bg-[#a2dffd] hover:text-black cursor-pointer"
+                >
+                  Delete
+                </button>
               </div>
-
-
-
             </div>
-            <p class="font-[EB_Garamond] text-lg text-red-800"> {{ notFoundData ? `We did not find information with given title and date!` : ''}} </p>
-
+            <p class="font-[EB_Garamond] text-lg text-red-800">
+              {{ notFoundData ? `We did not find information with given title and date!` : '' }}
+            </p>
 
             <button
               type="submit"
               class="mt-5 inline-flex items-center justify-center bg-black px-6 py-3 text-sm uppercase tracking-wide text-white transition hover:bg-[#a2dffd] hover:text-black cursor-pointer"
             >
-              {{ cargando ? 'Searching data....' : 'Delete info' }}
+              {{ cargando ? 'Searching data....' : 'Show preview' }}
             </button>
           </form>
-
         </div>
-
       </section>
     </div>
   </div>
@@ -332,31 +337,18 @@
 
 <script setup>
 import { ref, watch } from 'vue'
-import { saveData, updateAbout, getOneInfoToUpdateOrDelete, deleteData } from '@/services/administrateinfo'
+import {
+  saveData,
+  updateAbout,
+  getOneInfoToUpdateOrDelete,
+  deleteData,
+} from '@/services/administrateinfo'
 import { useToast } from 'vue-toastification'
-
 
 const toggleDeleteInfo = ref(false)
 const toggleAddInfo = ref(true)
 const toggleUpdateInfo = ref(false)
 
-const selectDeleteInfo =()=> {
-  toggleDeleteInfo.value = true
-  toggleAddInfo.value = false
-  toggleUpdateInfo.value = false
-}
-
-const selectAddInfo =() => {
-  toggleDeleteInfo.value = false
-  toggleAddInfo.value = true
-  toggleUpdateInfo.value = false
-}
-
-const selectUpdateInfo =() => {
-  toggleDeleteInfo.value = false
-  toggleAddInfo.value = false
-  toggleUpdateInfo.value = true
-}
 
 
 const toast = useToast()
@@ -379,51 +371,101 @@ const videos = ref([])
 let toDeleteDataPreview = ref([])
 let notFoundData = ref(false)
 
-const deleteInfoById = async (id) => {
-  const result = await deleteData(id, table.value)
-  if(result.ok){
-    title.value = ''
-    date.value = ''
-    table.value = ''
 
-    toast.success(result.message, {
-        timeout: 2500,
-      })
+const selectDeleteInfo = () => {
+  toggleDeleteInfo.value = true
+  toggleAddInfo.value = false
+  toggleUpdateInfo.value = false
+}
 
-  } else {
-      toast.error(result.message, {
-        timeout: false,
-      })
-    }
-
-
+const selectAddInfo = () => {
+  toggleDeleteInfo.value = false
+  toggleAddInfo.value = true
+  toggleUpdateInfo.value = false
+  toDeleteDataPreview.value = []
 }
 
 
-const searchInfo = async() => {
 
+const deleteInfoById = async (id) => {
+  const result = await deleteData(id, table.value)
+  if (result.ok) {
+    title.value = ''
+    date.value = ''
+    table.value = ''
+    toDeleteDataPreview.value = []
+
+    toast.success(result.message, {
+      timeout: 2500,
+    })
+  } else {
+    toast.error(result.message, {
+      timeout: false,
+    })
+  }
+}
+
+const searchInfo = async () => {
   cargando.value = true
   toDeleteDataPreview.value = []
   notFoundData.value = false
 
-  console.log(table.value, title.value, date.value);
-
-
+  console.log(table.value, title.value, date.value)
 
   //const result = await getOneInfoToUpdateOrDelete(title.value.trim().toLowerCase(), date.value, table.value)
   const result = await getOneInfoToUpdateOrDelete(title.value, date.value, table.value)
-  if(result.ok){
-    toDeleteDataPreview.value = result.data
+  if (result.ok) {
+    // try to filter data with words from title
+    const search = title.value.trim().toLowerCase();
+
+    if(search){
+      // get words with min 3 letters for further filtering fetched results
+      const keyWords = search.split(/\s+/).filter(word => word.length >= 3);
+      console.log(keyWords);
+
+      // nothing useful to search
+      if (!keyWords.length) return;
+
+      // cache existing ids for O(1) lookup for any case
+      const existingIds = new Set(
+        toDeleteDataPreview.value.map(item => item.id)
+      );
+
+      // single pass over result.data
+      for (const item of result.data) {
+        const itemTitle = item.title.toLowerCase();
+
+        // check keyword match (early exit)
+        let matches = false;
+        for (const word of keyWords) {
+          if (itemTitle.includes(word)) {
+            matches = true;
+            break;
+          }
+        }
+
+        // push only if valid and not duplicated
+        if (matches && !existingIds.has(item.id)) {
+          toDeleteDataPreview.value.push(item);
+          existingIds.add(item.id); // keep Set in sync
+        }
+      }
+
+    } else {
+      toDeleteDataPreview.value = result.data
+
+    }
+
+
     cargando.value = false
-    if(toDeleteDataPreview.value.length == 0){
+    if (toDeleteDataPreview.value.length == 0) {
       notFoundData.value = true
     }
   } else {
-      toast.error(result.message, {
-        timeout: false,
-      })
-    }
-
+    toast.error(result.message, {
+      timeout: false,
+    })
+  }
 }
 
 function convertToYouTubeEmbed(url) {
@@ -452,6 +494,8 @@ function convertToYouTubeEmbed(url) {
 
     return `https://www.youtube.com/embed/${videoId}`
   } catch (error) {
+
+    console.log('Video link convert error:',error);
     return null
   }
 }
@@ -466,19 +510,29 @@ const addInfo = async () => {
 
   let data = {}
   if (table.value == 'about') {
+
+    cargando.value = true
+
+    // if image is an empty string - clean images array
+    if(images.value){
+      if(!images.value[0].trim()){
+        images.value = []
+      }
+    }
+
     data = {
-      title: title?.value.trim().toLowerCase(),
+      title: title?.value.trim().toLowerCase().replace(/[“”„‟«»‹›]/g, '"'),
       description: about?.value,
       image: images?.value[0],
       tools: tools?.value,
       contacts: contacts?.value,
     }
     const cleanData = JSON.parse(JSON.stringify(data))
-    cargando.value = true
+
     const resultFromDataBase = await updateAbout(cleanData)
     if (resultFromDataBase.ok) {
       toast.success(resultFromDataBase.message, {
-        timeout: 500,
+        timeout: 2500,
       })
 
       title.value = ''
@@ -494,7 +548,29 @@ const addInfo = async () => {
       cargando.value = false
     }
   } else {
+    // convert video link to a valid one for i-frame
     videos.value = videos.value.map((element) => convertToYouTubeEmbed(element))
+
+    // if video is an empty string - clean a video array
+    videos.value = videos.value.filter((video) => video.trim() != '')
+
+    // if photo is an empty string - clean a images array
+    images.value = images.value.filter((image) => image.trim() != '')
+
+    // check requiered fields
+    if(!date.value){
+      return toast.error('Date is empty', {
+        timeout: 2500,
+      })
+
+    }
+
+    if(!title.value){
+      return toast.error('Title is empty', {
+        timeout: 2500,
+      })
+
+    }
 
     data = {
       title: title.value.trim().toLowerCase(),
@@ -503,12 +579,12 @@ const addInfo = async () => {
       image: images?.value,
       video: videos?.value,
     }
-
     const cleanData = JSON.parse(JSON.stringify(data))
+
     const resultFromDataBase = await saveData(cleanData, table.value)
     if (resultFromDataBase.ok) {
       toast.success(resultFromDataBase.message, {
-        timeout: 500,
+        timeout: 2500,
       })
 
       title.value = ''
@@ -519,7 +595,7 @@ const addInfo = async () => {
       cargando.value = false
     } else {
       toast.error(resultFromDataBase.message, {
-        timeout: 1500,
+        timeout: 3500,
       })
       cargando.value = false
     }
