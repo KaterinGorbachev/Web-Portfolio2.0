@@ -14,11 +14,11 @@
         class="w-full p-2 flex flex-col gap-4 items-start pt-[80px] lg:w-[49%]  bg-white ml-auto"
       >
         <h2
-          class="text-2xl font-[Roboto_Slab] uppercase tracking-wide w-full px-8 text-start lg:text-center"
+          class="text-2xl font-[Roboto_Slab] uppercase tracking-wide w-full px-8 text-start "
         >
           Managment board
         </h2>
-        <div class="flex w-full px-8 items-start lg:items-center lg:justify-center">
+        <div class="flex w-full px-8 items-start ">
           <button
             :disabled="toggleAddInfo"
             type="button"
@@ -48,7 +48,7 @@
           </button>
         </div>
         <div v-if="toggleAddInfo">
-          <p class="font-[EB_Garamond] text-[1.2rem] px-8 w-full text-start lg:text-center">
+          <p class="font-[EB_Garamond] text-[1.2rem] px-8 w-full text-start ">
             Select a category to add information to the specific page. Fields with * must be
             fulfilled.
           </p>
@@ -246,7 +246,7 @@
           </form>
         </div>
         <div v-if="toggleDeleteInfo">
-          <p class="font-[EB_Garamond] text-[1.2rem] px-8 w-full text-start lg:text-center">
+          <p class="font-[EB_Garamond] text-[1.2rem] px-8 w-full text-start ">
             To delete information first select a category and then fill all fields with *.
           </p>
           <form @submit.prevent="searchInfo" class="p-8 flex flex-col gap-4 w-full">
